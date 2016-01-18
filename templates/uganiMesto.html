@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ugani mesto</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <h1>Ugani mesto</h1>
+        <br>
+        <form method="post" action="/">
+        Vnesi ime mesta:<br>
+        <input type="text" name="mesto"><br>
+        {% if SLOVENIJA %}
+            <img src="http://www.tbs-education.fr/sites/default/files/upload/stockfile/commun/summer-school/2013/ljubljana.jpg" width="150" height="150">
+        <input type="hidden" name="drzava" value="SLOVENIJA"><br>
+        {% elif HRVASKA %}
+        <img src="http://static.thousandwonders.net/Zagreb.original.3967.jpg" width="150" height="150">
+        <input type="hidden" name="drzava" value="HRVASKA"><br>
+
+
+        {% elif SRBIJA %}
+        <img src="https://getbybus.com/hr/blog/wp-content/uploads/2015/07/Panorama-Beograd.jpg" width="150" height="150">
+        <input type="hidden" name="drzava" value="SRBIJA"><br>
+
+
+         {% elif ITALIJA %}
+        <img src="http://www.hotelbrasile.com/gallery/lrg/Roma.jpg" width="150" height="150">
+        <input type="hidden" name="drzava" value="ITALIJA"><br>
+
+             {% endif %}
+            <br>
+        <input type="submit" value="Pošlji!">
+        <input type="button" onclick="location.href='/';" value="Poskusi ponovno" />
+        <br>
+            </form>
+
+
+
+
+            {%if rezultat %}
+            {{ rezultat }}
+            {% endif %}
+
+
+
+</body>
+</html>
